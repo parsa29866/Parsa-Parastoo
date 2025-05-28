@@ -1,0 +1,24 @@
+#include <iostream>
+#include <thread>
+
+using namespace std;
+
+void func(int i) {
+    cout << "Hello " << i << endl;
+}
+
+int main() {
+    thread t0(func, 0);
+    thread t1(func, 1);
+    thread t2(func, 2);
+    thread t3(func, 3);
+    thread t4(func, 4);
+
+    t0.join();
+    t1.join();
+    t2.join();
+    t3.join();
+    t4.join();
+
+    return 0;
+}
